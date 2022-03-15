@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import logo from './assets/img/logo.svg';
+import './styles/App.css';
+import Header, * as h from './componentes/header'
+import Cuerpo from './componentes/cuerpo'
+import Agregar from './componentes/agregar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+   titulo_variable='Parrafos de Lorem Ipsum';
+   parrafos=[
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id justo ac nulla ullamcorper tristique',
+    ' Aenean feugiat vitae ex nec dictum',
+    'ipsum primis in faucibus. Integer non facilisis leo, nec molestie risus',
+    'Etiam pulvinar metus a placerat mollis'
+  ];
+
+  render(){
+    return (
+      <div>
+
+        <h.Topdiv />
+        <Header titulo={this.titulo_variable} />
+        <Cuerpo parraf={this.parrafos}/>
+        <Agregar />
+
+      </div>
+    )
+  }
 }
 
 export default App;
